@@ -1,0 +1,42 @@
+.App {
+  width: 500px;
+  padding: 10px;
+  text-align: left;
+
+  border: 1px solid grey;
+  border-radius: 5px;
+  background-color: aliceblue;
+  box-shadow: 2px 2px 3px rgba(0, 0, 0, 0.2);
+}
+
+.form {
+  padding: 10px;
+  border: 1px solid grey;
+  border-radius: 5px;
+}
+
+.labelNameField {
+  display: block;
+  margin-bottom: 20px;
+}
+
+.titleNameField {
+  display: block;
+  color: blue;
+}
+
+.nameField {
+  font-style: inherit;
+  padding: 5px;
+  border: 2px solid rgba(0, 0, 0, 0.2);
+  outline: none;
+  border-radius: 5px;
+}
+
+.nameField:hover {
+  border: 2px solid rgba(0, 0, 255, 0.4);
+}
+
+/* .listItem {
+  list-style: square;
+} */
