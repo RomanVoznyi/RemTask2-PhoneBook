@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import AddForm from './Components/AddForm';
 import Contacts from './Components/Contacts';
 import Filter from './Components/Filter';
@@ -15,8 +15,15 @@ const INITIAL_STATE = {
 };
 
 function App() {
-  const [contacts, setContacts] = useState(INITIAL_STATE.contacts);
+  const [contacts, setContacts] = useState(() => {
+    const localContacts = localStorage.getItem('contacts');
+    return JSON.parse(localContacts) || INITIAL_STATE.contacts;
+  });
   const [filter, setFilter] = useState(INITIAL_STATE.filter);
+
+  useEffect(() => {
+    localStorage.setItem('contacts', JSON.stringify(contacts));
+  }, [contacts]);
 
   const handleInputField = ({ target }) => setFilter(target.value);
 
